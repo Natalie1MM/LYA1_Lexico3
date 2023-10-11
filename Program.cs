@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace LYA1_Lexico2
+namespace LYA1_Lexico3
 {
     class Program
     {
@@ -13,6 +13,8 @@ namespace LYA1_Lexico2
             {
                 using (Lexico L = new Lexico())
                 {
+                    int b=0;
+                    int a = 1/b;
                     while (!L.FinArchivo())
                     {
                         L.nextToken();
@@ -21,7 +23,7 @@ namespace LYA1_Lexico2
             } 
             catch (Exception e)
             {
-                Console.WriteLine("Error: "+e.Message);
+                Console.WriteLine("Error "+e.Message);
             }
         }
     }
