@@ -14,18 +14,41 @@ namespace LYA1_Lexico3
         private StreamReader archivo;
         private StreamWriter log;
 
-        int[,] TRAND =  
+        int[,] TRAND =
         {
         //  WS,L,D,.,E,+,-,La
-            {0,1,2,8,1,8,8,8}, // 0
-            {F,1,1,F,1,F,F,F}, // 1
-            {F,F,2,3,5,F,F,F}, // 2
-            {E,E,4,E,E,E,E,E}, // 3
-            {F,F,4,F,5,F,F,F}, // 4
-            {E,E,7,E,E,6,6,E}, // 5
-            {E,E,7,E,E,E,E,E}, // 6
-            {F,F,7,F,F,F,F,F}, // 7
-            {F,F,F,F,F,F,F,F}, // 8
+{0, 1,  2,  8,  1,  19, 20, 8,  8,  10, 11, 12, 13, 16, F,  17, 22, 24, 25, 28, F,  F,  F,  F},
+{F, 1,  1,  F,  1,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F},
+{F, F,  3,  3,  5,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F},
+{E, E,  4,  E,  E,  E,  E,  E,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F},
+{F, F,  4,  F,  5,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F},
+{E, E,  7,  E,  E,  6,  6,  E,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F},
+{E, E,  7,  E,  E,  E,  E,  E,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F},
+{F, F,  7,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F},
+{F, F,  F,  F,  F,  F,  F,  F,  9,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F},
+{F, F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F},
+{F, F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F},
+{F, F,  F,  F,  F,  F,  F,  F,  F,  F,  14, F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F},
+{F, F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  14, F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F},
+{F, F,  F,  F,  F,  F,  F,  F,  15, F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F},
+{F, F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F},
+{F, F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F},
+{F, F,  F,  F,  F,  F,  F,  F,  18, F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F},
+{F, F,  F,  F,  F,  F,  F,  F,  18, F,  F,  F,  F,  18, F,  F,  F,  F,  F,  F,  F,  F,  F,  F},
+{F, F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F},
+{F, F,  F,  F,  F,  21, F,  F,  21, F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F},
+{F, F,  F,  F,  F,  F,  21, F,  21, F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F},
+{F, F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F},
+{F, F,  F,  F,  F,  F,  F,  F,  23, F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F},
+{F, F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F},
+{F, F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F},
+{25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 26, 25, E,  F, F,  F},
+{F, F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F},
+{F, F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F},
+{F, F,  F,  F,  F,  F,  F,  F,  23, F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  29, F,  F,  F,  F},
+{29,29, 29, 29, 29, 29, 29, 29, 29, 29, 29, 29, 29, 29, 29, 29, 29, 29, 29, 29, 29, 0, 29, 29},
+{30,30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 31, 30, 30, 30, 30, 30, 30, 30, 30,30},
+{30,30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 31, 30, 30, 30, 30, 0,  E,  30, 30,30},
         };
         public Lexico()
         {
@@ -54,16 +77,15 @@ namespace LYA1_Lexico3
                 return 1;
             else if (char.IsAsciiDigit(c))
                 return 2;
-            else if (c=='.')
+            else if (c == '.')
                 return 3;
-            else if (c=='+')
+            else if (c == '+')
                 return 5;
-            else if (c=='-')
+            else if (c == '-')
                 return 6;
             else
                 return 7;
-            else
-             return 
+           
         }
         private void clasificar(int estado)
         {
@@ -85,21 +107,21 @@ namespace LYA1_Lexico3
             {
                 c = (char)archivo.Peek();
 
-                estado = TRAND[estado,columna(c)];
+                estado = TRAND[estado, columna(c)];
                 clasificar(estado);
-                
+
                 if (estado >= 0)
                 {
                     if (estado > 0)
                     {
-                        buffer += c;    
+                        buffer += c;
                     }
                     archivo.Read();
                 }
             }
             if (estado == E)
             {
-                throw new Error("Lexico: Se espera un digito",log);
+                throw new Error("Lexico: Se espera un digito", log);
             }
             setContenido(buffer);
             log.WriteLine(getContenido() + " = " + getClasificacion());
