@@ -107,6 +107,10 @@ namespace LYA1_Lexico3
                 return 18;
                  else if (c == '/')
                 return 19;
+             /*   else if (c =='EOF')
+                return 20;
+                else if (c =='EOL')
+                return 21;*/
                  else if (c == '{')
                 return 22;
                  else if (c == '}')
