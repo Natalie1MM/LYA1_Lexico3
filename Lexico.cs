@@ -83,7 +83,35 @@ namespace LYA1_Lexico3
                 return 5;
             else if (c == '-')
                 return 6;
-            else
+            else if (c == '=')
+                return 8;
+            else if (c == ';')
+                return 9;
+                else if (c == '&')
+                return 10;
+                else if (c == '|')
+                return 11;
+                else if (c == '!')
+                return 12;
+                else if (c == '>')
+                return 13;
+                else if (c == '*')
+                return 14;
+                else if (c == '<')
+                return 15;
+                else if (c == '*'||c=='%')
+                return 16;
+                 else if (c == '?')
+                return 17;
+                 else if (c == '"')
+                return 18;
+                 else if (c == '/')
+                return 19;
+                 else if (c == '{')
+                return 22;
+                 else if (c == '}')
+                return 23;
+            else 
                 return 7;
            
         }
