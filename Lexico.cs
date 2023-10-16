@@ -16,7 +16,7 @@ namespace LYA1_Lexico3
 
         int[,] TRAND =
         {
-// WS,L,D	.	E	+	-	La	=	;	&	|	!	>	*	<	%	?	"	/ EOF	EOL	{   }
+// WS,L,D	.	E	+	-	La	=	;	&	|	!	>	*	<	%	?	"	/   EOF	EOL	{   }
 {0, 1,  2,  F,  1,  19, 20, 27, 8,  10, 11, 12, 13, 16, 22, 17, 22, 24, 25, 28, F,  0,  32, 33},
 {F, 1,  1,  F,  1,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F},
 {F, F,  2,  3,  5,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F},
@@ -42,15 +42,16 @@ namespace LYA1_Lexico3
 {F, F,  F,  F,  F,  F,  F,  F,  23, F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F},
 {F, F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F},
 {F, F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F},
-{25,25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 26, F,  E,  F,  25, 25},
+{25,25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 26, 25, E, 25,  25, 25},
 {F, F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F},
 {F, F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F},
-{F, F,  F,  F,  F,  F,  F,  F,  23, F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  29, F,  F,  F,  F},
+{F, F,  F,  F,  F,  F,  F,  F,  23, F,  F,  F,  F,  F,  30,  F,  F,  F,  F,  29, F,  F,  F,  F},
 {29,29, 29, 29, 29, 29, 29, 29, 29, 29, 29, 29, 29, 29, 29, 29, 29, 29, 29, 29, 29, 0,  29, 29},
 {30, 30,30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 31, 30, 30, 30, 30, 30, E,  30, 30, 30},
 {30, 30,30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 31, 30, 30, 30, 30, 0,  E,  30, 30, 30},
 {F, F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F},
 {F, F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  F,  33}
+// WS,L,D	.	E	+	-	La	=	;	&	|	!	>	*	<	%	?	"	/   EOF	EOL	{   }
         };
         public Lexico()
         {
@@ -111,10 +112,6 @@ namespace LYA1_Lexico3
                 return 18;
             else if (c == '/')
                 return 19;
-            /*   else if (c =='EOF')
-               return 20;
-               else if (c =='EOL')
-               return 21;*/
             else if (c == '{')
                 return 22;
             else if (c == '}')
@@ -175,6 +172,9 @@ namespace LYA1_Lexico3
                     {
                         buffer += c;
                     }
+                    else{
+                        buffer = "";
+                    }
                     archivo.Read();
                 }
             }
@@ -182,6 +182,7 @@ namespace LYA1_Lexico3
             {
                 throw new Error("Lexico: Se espera un digito", log);
             }
+            
             setContenido(buffer);
             log.WriteLine(getContenido() + " = " + getClasificacion());
         }
