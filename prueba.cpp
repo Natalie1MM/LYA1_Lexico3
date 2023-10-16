@@ -1,8 +1,7 @@
 
-{
-        123.45e-8
-        radioDeLaCircunferencia=45;
-                +++---#
 
-}
-        
+{// Prueba de fuego
+x26=3.141592/**/+++/***/---/****/&&&|||===!!==//Test
+<<<>>>"Hola mundo";/*Cadena Vacia*/"";+=-=*=/=%=
+}"
+    
