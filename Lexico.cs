@@ -180,7 +180,10 @@ namespace LYA1_Lexico3
             }
             if (estado == E)
             {
-                throw new Error("Lexico: Se espera un digito", log);
+                if (getClasificacion() == Tipos.Numero)
+                    throw new Error("Lexico: Se espera un digito", log);
+                else
+                    throw new Error("Lexico: no se cerro la cadena", log);   
             }
             
             setContenido(buffer);
