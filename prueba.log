@@ -1,0 +1,33 @@
+{ = Inicio
+x26 = Identificador
+= = Asignacion
+3.141592 = Numero
+++ = IncrementoTermino
++ = OperadorTermino
+-- = IncrementoTermino
+- = OperadorTermino
+&& = OperadorLogico
+& = Caracter
+|| = OperadorLogico
+| = Caracter
+== = OperadorRelacional
+= = Asignacion
+! = OperadorLogico
+!= = OperadorRelacional
+= = Asignacion
+< = OperadorRelacional
+< = OperadorRelacional
+<> = OperadorRelacional
+> = OperadorRelacional
+> = OperadorRelacional
+"Hola mundo" = cadena
+; = FinSentencia
+"" = cadena
+; = FinSentencia
++= = IncrementoTermino
+-= = IncrementoTermino
+*= = IncrementoFactor
+/= = IncrementoFactor
+%= = IncrementoFactor
+} = Fin
+Error Lexico: no se cerro la cadena
